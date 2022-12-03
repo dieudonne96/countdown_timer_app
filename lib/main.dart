@@ -99,6 +99,46 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: startTimer,
+                child: Text(
+                  'Start',
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+              ),
+              SizedBox(width: 15),
+              ElevatedButton(
+                onPressed: () {
+                  if (countdownTimer == null || countdownTimer!.isActive) {
+                    stopTimer();
+                  }
+                },
+                child: Text(
+                  'Stop',
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+              ),
+              SizedBox(width: 15),
+              ElevatedButton(
+                onPressed: () {
+                  resetTimer();
+                },
+                child: Text(
+                  'Reset',
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       )),
     );
